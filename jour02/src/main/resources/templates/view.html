@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title>View</title>
+</head>
+<body>
+    <h1 th:text="${message}">Bonjour (fallback)</h1>
+    <ul>
+        <li th:each="item : ${items}" th:text="${item}"></li>
+    </ul>
+    <form th:action="@{/welcome}" method="post">
+        <label for="username">Votre nom :</label>
+        <input type="text" id="username" name="username" required />
+        <button type="submit">Envoyer</button>
+    </form>
+    <div th:if="${welcomeMessage}" th:text="${welcomeMessage}"></div>
+</body>
+</html>
